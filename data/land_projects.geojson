@@ -1,0 +1,60 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Urban Pollinator Corridors",
+        "description": "Students map native flowering plants and create micro-corridors that reconnect fragmented habitats across the city. The project tracks pollinator return with monthly surveys and photo logs.",
+        "link": "https://example.com/land/pollinator-corridors"
+      },
+      "geometry": { "type": "Point", "coordinates": [ -0.1276, 51.5072 ] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Highland Reforestation Nursery",
+        "description": "A youth cooperative grows indigenous seedlings and partners with local farmers to restore degraded slopes. Community workshops share soil and water conservation practices.",
+        "link": "https://example.com/land/reforestation-nursery"
+      },
+      "geometry": { "type": "Point", "coordinates": [ -90.5133, 14.6407 ] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Savanna Wildlife Coexistence Map",
+        "description": "Young researchers interview households to map wildlife movement and identify conflict hotspots. The team co-designs low-cost deterrents and safe livestock routes.",
+        "link": "https://example.com/land/coexistence-map"
+      },
+      "geometry": { "type": "Point", "coordinates": [ 36.8219, -1.2921 ] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Mangrove-to-Market Stewardship (Land Edge)",
+        "description": "Youth leaders restore mangroves near coastal farms, then build sustainable livelihoods through community nurseries and monitoring trails that link restoration to local income.",
+        "link": "https://example.com/land/mangrove-stewardship"
+      },
+      "geometry": { "type": "Point", "coordinates": [ 100.5018, 13.7563 ] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Watershed Clean Streams Lab",
+        "description": "A student-run lab tests stream health (pH, turbidity, nitrates) and publishes a public dashboard. Cleanup days combine data collection with storytelling.",
+        "link": "https://example.com/land/clean-streams"
+      },
+      "geometry": { "type": "Point", "coordinates": [ -122.4194, 37.7749 ] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Mountain Trail Erosion Repair",
+        "description": "Youth volunteers repair trail drainage, install erosion bars, and document before/after photos to reduce sediment entering alpine lakes.",
+        "link": "https://example.com/land/trail-erosion"
+      },
+      "geometry": { "type": "Point", "coordinates": [ 139.6917, 35.6895 ] }
+    }
+  ]
+}
+

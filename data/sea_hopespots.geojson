@@ -1,0 +1,60 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Coral Recovery Hope Spot",
+        "description": "Community divers monitor coral bleaching and support reef restoration with coral gardening and heat-tolerant nurseries. Story circles share local knowledge and tourism impacts.",
+        "link": "https://example.com/sea/coral-recovery"
+      },
+      "geometry": { "type": "Point", "coordinates": [ 115.1889, -8.4095 ] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Kelp Forest Guardians",
+        "description": "A youth-led team maps kelp canopy extent and organizes shoreline cleanups. The program pairs citizen science transects with underwater photography.",
+        "link": "https://example.com/sea/kelp-guardians"
+      },
+      "geometry": { "type": "Point", "coordinates": [ 18.4241, -33.9249 ] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Seagrass Carbon Sanctuary",
+        "description": "Students partner with fishers to protect seagrass meadows and measure blue-carbon potential. Seasonal surveys document biodiversity and water clarity.",
+        "link": "https://example.com/sea/seagrass-carbon"
+      },
+      "geometry": { "type": "Point", "coordinates": [ -80.1918, 25.7617 ] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Plastic-Free Bay Hope Spot",
+        "description": "A coalition reduces plastic leakage at the source with refill stations, school challenges, and river boom interception. Collected plastics are catalogued and upcycled.",
+        "link": "https://example.com/sea/plastic-free-bay"
+      },
+      "geometry": { "type": "Point", "coordinates": [ 103.8198, 1.3521 ] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Open-Ocean Migration Corridor",
+        "description": "Youth researchers visualize whale and turtle migration routes and advocate for safer shipping lanes. The Hope Spot highlights science-to-policy collaboration.",
+        "link": "https://example.com/sea/migration-corridor"
+      },
+      "geometry": { "type": "Point", "coordinates": [ -157.8583, 21.3069 ] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Cold-Water Reef Refuge",
+        "description": "A coastal community documents cold-water reef habitats and builds a local archive of underwater imagery to support marine protected area planning.",
+        "link": "https://example.com/sea/cold-water-reef"
+      },
+      "geometry": { "type": "Point", "coordinates": [ -9.5, 53.2 ] }
+    }
+  ]
+}
+

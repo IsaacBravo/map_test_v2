@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  	<title>Tapestry of Hope — Digital Globe</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cesium.com/downloads/cesiumjs/releases/1.137/Build/Cesium/Widgets/widgets.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="cesiumContainer" aria-label="Interactive 3D globe"></div>
+
+      <div class="hud" aria-label="Controls">
+        <div class="hudTitle">Tapestry of Hope</div>
+
+        <label class="hudRow">
+          <input id="toggleLand" type="checkbox" checked />
+          <span class="hudLabel">
+            <span class="dot dotGreen" aria-hidden="true"></span>
+            Land
+          </span>
+          <span id="countLand" class="countPill" aria-label="Land project count">—</span>
+        </label>
+
+        <label class="hudRow">
+          <input id="toggleSea" type="checkbox" checked />
+          <span class="hudLabel">
+            <span class="dot dotBlue" aria-hidden="true"></span>
+            Sea
+          </span>
+          <span id="countSea" class="countPill" aria-label="Hope spot count">—</span>
+        </label>
+
+        <a id="submitLink" class="hudLink" href="#" target="_blank" rel="noopener noreferrer">
+          Submit Your Story →
+        </a>
+      </div>
+
+      <section id="popup" class="popup" hidden aria-label="Story popup" role="dialog" aria-modal="false">
+        <button id="popupClose" class="popupClose" type="button" aria-label="Close story">✕</button>
+        <div class="popupBody">
+          <div id="popupTag" class="popupTag">—</div>
+          <h2 id="popupTitle" class="popupTitle">—</h2>
+          <p id="popupDesc" class="popupDesc">—</p>
+          <a id="popupLink" class="popupLink" href="#" target="_blank" rel="noopener noreferrer" hidden>
+            Learn more →
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <script src="https://cesium.com/downloads/cesiumjs/releases/1.137/Build/Cesium/Cesium.js"></script>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
+

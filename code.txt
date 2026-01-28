@@ -1,0 +1,71 @@
+async function loadLayers() {
+  // Load land, sea, and country borders
+  const [land, sea, countries] = await Promise.all([
+    Cesium.GeoJsonDataSource.load(LAND_GEOJSON_URL, { clampToGround: true }),
+    Cesium.GeoJsonDataSource.load(SEA_GEOJSON_URL, { clampToGround: true }),
+    Cesium.GeoJsonDataSource.load(COUNTRIES_GEOJSON_URL, { clampToGround: true })
+  ]);
+
+  land.name = "Land projects";
+  sea.name = "Hope Spots";
+  countries.name = "Country Borders";
+
+  applyPointStyle(land, {
+    pinImage: landPin,
+    typeLabel: "Land project",
+    accent: "#21d07a",
+  });
+  applyPointStyle(sea, { pinImage: seaPin, typeLabel: "Hope Spot", accent: "#2f8cff" });
+
+  // Style country polygons: thin white outline, transparent fill
+  // Remove problematic polygons/multipolygons that cause Cesium errors
+  const toRemove = [];
+  for (const entity of countries.entities.values) {
+    // Only keep polygons with reasonable number of hierarchy positions
+    if (entity.polygon && entity.polygon.hierarchy) {
+      let positions = [];
+      try {
+        const h = entity.polygon.hierarchy.getValue();
+        if (Array.isArray(h.positions)) {
+          positions = h.positions;
+        } else if (h && h.positions) {
+          positions = h.positions;
+        }
+      } catch (e) {
+        toRemove.push(entity);
+        continue;
+      }
+      if (!positions || positions.length > 10000 || positions.length < 3) {
+        toRemove.push(entity);
+        continue;
+      }
+      entity.polygon.material = Cesium.Color.WHITE.withAlpha(1.0); // Solid white fill
+      entity.polygon.outline = true;
+      entity.polygon.outlineColor = Cesium.Color.BLACK.withAlpha(1.0); // Bold black border
+      entity.polygon.outlineWidth = 6.0;
+    } else if (entity.polyline) {
+      entity.polyline.material = Cesium.Color.BLACK.withAlpha(1.0);
+      entity.polyline.width = 6.0;
+    } else {
+      toRemove.push(entity);
+    }
+  }
+  for (const entity of toRemove) {
+    countries.entities.remove(entity);
+  }
+
+  wireClusterZoom(land, { clusterBillboardImage: landClusterPin, clusterTag: "Land cluster" });
+  wireClusterZoom(sea, { clusterBillboardImage: seaClusterPin, clusterTag: "Sea cluster" });
+
+  // Add countries first so points are on top
+  await viewer.dataSources.add(countries);
+  await viewer.dataSources.add(land);
+  await viewer.dataSources.add(sea);
+
+  return { land, sea, countries };
+}
+
+const LAND_GEOJSON_URL = "./data/land_projects.geojson";
+const SEA_GEOJSON_URL = "./data/sea_hopespots.geojson";
+//const COUNTRIES_GEOJSON_URL = "./data/map.geojson";
+const COUNTRIES_FILL_GEOJSON_URL = "./data/map_simplified.geojson";
